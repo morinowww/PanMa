@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = 'stylesheet' href = 'body.css'>
+    <link rel = 'stylesheet' href = 'index.css'>
+    <title>PanMa</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&family=Poppins:ital,wght@0,100;0,400;0,600;0,800;1,800&display=swap" rel="stylesheet">
+</head>
+    <body>
+    <header>
+        <h1>PanMa</h1>
+        <nav>
+            <ul class = 'nav_ul'>
+                <li class = 'nav_section'>Panahon Ngayon</li>
+                <li class = 'nav_section'>Forecast</li>
+                <li class = 'weather_forecast_time_header_div'>
+                    <div class = 'weather_forecast_time_date'>
+                        <p id = "id_header_time_month" class = "p_weather_forecast_time_date">Buwan</p>
+                        <p class = "p_weather_forecast_time_date">&nbsp&nbsp&nbsp</p>
+                        <p id = "id_header_time_day" class = "p_weather_forecast_time_date">Araw</p>
+                        <p class = "p_weather_forecast_time_date">&nbsp&nbsp&nbsp</p>
+                        <p id = "id_header_time_year" class = "p_weather_forecast_time_date">Taon</p>
+                    </div>
+                    <div class = 'weather_forecast_time_header'>    
+                        <p id = "id_header_time_hours" class = "p_weather_forecast_time_date">00</p>
+                        <p class = "p_weather_forecast_time_date">:</p>
+                        <p id = "id_header_time_minutes" class = "p_weather_forecast_time_date">00</p>
+                        <p class = "p_weather_forecast_time_date">:</p>
+                        <p id = "id_header_time_seconds" class = "p_weather_forecast_time_date">00</p>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class = "basic_weather_forecast">
+        <div class = "basic_weather_now">
+            <div class = "basic_weather_forecast_header">
+                <h2 class = "basic_weather_forecast_header_text">Panahon Ngayon</h2>
+            </div>      
+            <div class = "weather_forecast_summary_info">
+                <div class = "weather_forecast_summary_div">
+                    <ul class = "weather_forecast_summary_list">
+                        <li class = "weather_foreacst_summary_entry">
+                            <h3 class = "weather_foreacst_summary_entry_header" >Temperature</h3>
+                            <p id = 'info_temp_summary' class = "weather_foreacst_summary_entry_data_entry" >00.0</p>
+                        </li>
+                        <li class = "weather_foreacst_summary_entry">
+                            <h3 class = "weather_foreacst_summary_entry_header">Heat Index</h3>
+                            <p id = 'info_heat_summary' class = "weather_foreacst_summary_entry_data_entry" >00.0</p>
+                        </li>
+                        <li class = "weather_foreacst_summary_entry">
+                            <h3 class = "weather_foreacst_summary_entry_header">Humidity</h3>
+                            <p id = 'info_humidity' class = "weather_foreacst_summary_entry_data_entry" >00%</p>
+                        </li>
+                    </ul>   
+                    <ul class = "weather_forecast_summary_list">
+                        <li class = "weather_foreacst_summary_entry">
+                            <h3 class = "weather_foreacst_summary_entry_header" >Pressure</h3>
+                            <p id = 'info_pressure_summary' class = "weather_foreacst_summary_entry_data_entry" >00%</p>
+                        </li>
+                        <li class = "weather_foreacst_summary_entry">
+                            <h3 class = "weather_foreacst_summary_entry_header">Wind Direction</h3>
+                            <p id = 'info_windDir_summary' class = "weather_foreacst_summary_entry_data_entry" >ese</p>
+                        </li>                        
+                        <li class = "weather_foreacst_summary_entry">
+                            <h3 class = "weather_foreacst_summary_entry_header">Wind Speed</h3>
+                            <p id = 'info_windKPH_summary' class = "weather_foreacst_summary_entry_data_entry" >40kph</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class = "basic_weather_forecast_header">
+                <h2 class = "basic_weather_forecast_header_text">Panahon Bukas</h2>
+                <ul class = 'weather_date_selector'>
+                    <div class = "weather_date_selector_div">
+                        <li onClick = 'selectDateSelector(this.id)' id = "date0" class = "weather_date">
+                            <p id ='sMon0'>Mon</p>
+                            <p> - </p>
+                            <p id = 'sDay0'>DD</p>
+                        </li>
+                        <li onClick = 'selectDateSelector(this.id)' id = "date1" class = "weather_date">
+                            <p id ='sMon1'>Mon</p>
+                            <p> - </p>
+                            <p id = 'sDay1'>DD</p>
+                        </li>
+                        <li onClick = 'selectDateSelector(this.id)' id = "date2" class = "weather_date">
+                            <p id ='sMon2'>Mon</p>
+                            <p> - </p>
+                            <p id = 'sDay2'>DD</p>
+                        </li>
+                        <li onClick = 'selectDateSelector(this.id)' id = "date3" class = "weather_date">
+                            <p id ='sMon3'>Mon</p>
+                            <p> - </p>
+                            <p id = 'sDay3'>DD</p>
+                        </li>
+                        <li onClick = 'selectDateSelector(this.id)' id = "date4" class = "weather_date">
+                            <p id ='sMon4'>Mon</p>
+                            <p> - </p>
+                            <p id = 'sDay4'>DD</p>
+                        </li>
+
+                    </div>
+                    <div class = "weather_date_selector_div">
+                        <li onClick = 'selectDateSelector(this.id)' id = "date5" class = "weather_date">
+                            <p id ='sMon5'>Mon</p>
+                            <p> - </p>
+                            <p id = 'sDay5'>DD</p>
+                        </li>
+                        <li onClick = 'selectDateSelector(this.id)' id = "date6" class = "weather_date">
+                            <p id ='sMon6'>Mon</p>
+                            <p> - </p>
+                            <p id = 'sDay6'>DD</p>
+                        </li>
+                        <li onClick = 'selectDateSelector(this.id)' id = "date7" class = "weather_date">
+                            <p id ='sMon7'>Mon</p>
+                            <p> - </p>
+                            <p id = 'sDay7'>DD</p>
+                        </li>
+                        <li onClick = 'selectDateSelector(this.id)' id = "date8" class = "weather_date">
+                            <p id ='sMon8'>Mon</p>
+                            <p> - </p>
+                            <p id = 'sDay8'>DD</p>
+                        </li>
+                        <li onClick = 'selectDateSelector(this.id)' id = "date9" class = "weather_date">
+                            <p id ='sMon9'>Mon</p>
+                            <p> - </p>
+                            <p id = 'sDay9'>DD</p>
+                        </li>
+                    </div>
+                    
+                </ul>
+            </div>
+            <div class = "weather_forecast_charted_info">
+                <div>
+                </div>
+                <div class = "weather_forecast_charted_info_header">
+                    <ul class = "charted_info_chart_header_list">
+                        <li>
+                            <p onClick = 'change_label(this.id)' id = "chart_select_temperature"  class = "charted_info_chart_title">Temperature</p>
+                        </li>
+                        <li>
+                            <p onClick = 'change_label(this.id)' id = "chart_select_heat_index"  class = "charted_info_chart_title">Heat Index</p>
+                        </li>
+                        <li>
+                            <p onClick = 'change_label(this.id)' id = "chart_selec_precipitation"  class = "charted_info_chart_title">Precipitation</p>
+                        </li>
+                        <li>
+                            <p onClick = 'change_label(this.id)' id = "chart_select_wind"  class = "charted_info_chart_title">Wind</p>
+                        </li>
+                    </ul>
+                </div>
+                <div id = "chart_temp" class = "charted_info_chart">
+                    <ul class = "charted_info_chart_list">
+                        <li class = "charted_info_chart_entry">
+                            <p id = 'temp_chart_time0' class = "charted_info_chart_data">00.0</p>
+                            <div id = 'temp_chart_box0' class = "charted_info_chart_grid"></div>
+                        </li>
+                        <li class = "charted_info_chart_entry_type2">
+                            <p id = 'temp_chart_time2' class = "charted_info_chart_data">00.0</p>
+                            <div id = 'temp_chart_box2' class = "charted_info_chart_grid_type2"></div>
+                        </li>
+                        <li class = "charted_info_chart_entry_type2">
+                            <p id = 'temp_chart_time4' class = "charted_info_chart_data">00.0</p>
+                            <div id = 'temp_chart_box4' class = "charted_info_chart_grid_type2"></div>
+                        </li>
+                        <li class = "charted_info_chart_entry">
+                            <p id = 'temp_chart_time6' class = "charted_info_chart_data">00.0</p>
+                            <div id = 'temp_chart_box6' class = "charted_info_chart_grid"></div>
+                        </li>
+                        <li class = "charted_info_chart_entry_type2">
+                            <p id = 'temp_chart_time8' class = "charted_info_chart_data">00.0</p>
+                            <div id = 'temp_chart_box8' class = "charted_info_chart_grid_type2"></div>
+                        </li>
+                        <li class = "charted_info_chart_entry_type2">
+                            <p id = 'temp_chart_time10' class = "charted_info_chart_data">00.0</p>
+                            <div id = 'temp_chart_box10' class = "charted_info_chart_grid_type2"></div>
+                        </li>
+                        <li class = "charted_info_chart_entry">
+                            <p id = 'temp_chart_time12' class = "charted_info_chart_data">00.0</p>
+                            <div id = 'temp_chart_box12' class = "charted_info_chart_grid"></div>
+                        </li>
+                        <li class = "charted_info_chart_entry_type2">
+                            <p id = 'temp_chart_time14' class = "charted_info_chart_data">00.0</p>
+                            <div id = 'temp_chart_box14' class = "charted_info_chart_grid_type2"></div>
+                        </li>
+                        <li class = "charted_info_chart_entry_type2">
+                            <p id = 'temp_chart_time16' class = "charted_info_chart_data">00.0</p>
+                            <div id = 'temp_chart_box16' class = "charted_info_chart_grid_type2"></div>
+                        </li>
+                        <li class = "charted_info_chart_entry">
+                            <p id = 'temp_chart_time18' class = "charted_info_chart_data">00.0</p>
+                            <div id = 'temp_chart_box18' class = "charted_info_chart_grid"></div>
+                        </li>
+                        <li class = "charted_info_chart_entry_type2">
+                            <p id = 'temp_chart_time20' class = "charted_info_chart_data">00.0</p>
+                            <div id = 'temp_chart_box20' class = "charted_info_chart_grid_type2"></div>
+                        </li>
+                        <li class = "charted_info_chart_entry_type2">
+                            <p id = 'temp_chart_time22' class = "charted_info_chart_data">00.0</p>
+                            <div id = 'temp_chart_box22' class = "charted_info_chart_grid_type2"></div>
+                        </li>
+                        <li class = "charted_info_chart_entry">
+                            <p id = 'temp_chart_time24' class = "charted_info_chart_data">00.0</p>
+                            <div id = 'temp_chart_box24' class = "charted_info_chart_grid"></div>
+                        </li>
+                    </ul>
+                </div>
+                <div id = "chart_heat" class = "charted_info_chart">
+                    <ul class = "charted_info_chart_list">
+                        <li class = "charted_info_chart_entry">
+                            <p id = 'heat_chart_time0' class = "charted_info_chart_data">00.0</p>
+                            <div id = 'heat_chart_box0' class = "charted_info_chart_grid"></div>
+                        </li>
+                        <li class = "charted_info_chart_entry_type2">
+                            <p id = 'heat_chart_time2' class = "charted_info_chart_data">00.0</p>
+                            <div id = 'heat_chart_box2' class = "charted_info_chart_grid_type2"></div>
+                        </li>
+                        <li class = "charted_info_chart_entry_type2">
+                            <p id = 'heat_chart_time4' class = "charted_info_chart_data">00.0</p>
+                            <div id = 'heat_chart_box4' class = "charted_info_chart_grid_type2"></div>
+                        </li>
+                        <li class = "charted_info_chart_entry">
+                            <p id = 'heat_chart_time6' class = "charted_info_chart_data">00.0</p>
+                            <div id = 'heat_chart_box6' class = "charted_info_chart_grid"></div>
+                        </li>
+                        <li class = "charted_info_chart_entry_type2">
+                            <p id = 'heat_chart_time8' class = "charted_info_chart_data">00.0</p>
+                            <div id = 'heat_chart_box8' class = "charted_info_chart_grid_type2"></div>
+                        </li>
+                        <li class = "charted_info_chart_entry_type2">
+                            <p id = 'heat_chart_time10' class = "charted_info_chart_data">00.0</p>
+                            <div id = 'heat_chart_box10' class = "charted_info_chart_grid_type2"></div>
+                        </li>
+                        <li class = "charted_info_chart_entry">
+                            <p id = 'heat_chart_time12' class = "charted_info_chart_data">00.0</p>
+                            <div id = 'heat_chart_box12' class = "charted_info_chart_grid"></div>
+                        </li>
+                        <li class = "charted_info_chart_entry_type2">
+                            <p id = 'heat_chart_time14' class = "charted_info_chart_data">00.0</p>
+                            <div id = 'heat_chart_box14' class = "charted_info_chart_grid_type2"></div>
+                        </li>
+                        <li class = "charted_info_chart_entry_type2">
+                            <p id = 'heat_chart_time16' class = "charted_info_chart_data">00.0</p>
+                            <div id = 'heat_chart_box16' class = "charted_info_chart_grid_type2"></div>
+                        </li>
+                        <li class = "charted_info_chart_entry">
+                            <p id = 'heat_chart_time18' class = "charted_info_chart_data">00.0</p>
+                            <div id = 'heat_chart_box18' class = "charted_info_chart_grid"></div>
+                        </li>
+                        <li class = "charted_info_chart_entry_type2">
+                            <p id = 'heat_chart_time20' class = "charted_info_chart_data">00.0</p>
+                            <div id = 'heat_chart_box20' class = "charted_info_chart_grid_type2"></div>
+                        </li>
+                        <li class = "charted_info_chart_entry_type2">
+                            <p id = 'heat_chart_time22' class = "charted_info_chart_data">00.0</p>
+                            <div id = 'heat_chart_box22' class = "charted_info_chart_grid_type2"></div>
+                        </li>
+                        <li class = "charted_info_chart_entry">
+                            <p id = 'heat_chart_time24' class = "charted_info_chart_data">00.0</p>
+                            <div id = 'heat_chart_box24' class = "charted_info_chart_grid"></div>
+                        </li>
+                    </ul>
+                </div>
+                <div id = "chart_precipitation" class = "charted_info_chart">
+                    <ul class = "charted_info_chart_list">
+                        <li class = "charted_info_chart_entry">
+                            <p id = 'precipitation_chart_time0' class = "charted_info_chart_data">00.0</p>
+                            <div id = 'precipitation_chart_box0' class = "charted_info_chart_grid"></div>
+                        </li>
+                        <li class = "charted_info_chart_entry_type2">
+                            <p id = 'precipitation_chart_time2' class = "charted_info_chart_data">00.0</p>
+                            <div id = 'precipitation_chart_box2' class = "charted_info_chart_grid_type2"></div>
+                        </li>
+                        <li class = "charted_info_chart_entry_type2">
+                            <p id = 'precipitation_chart_time4' class = "charted_info_chart_data">00.0</p>
+                            <div id = 'precipitation_chart_box4' class = "charted_info_chart_grid_type2"></div>
+                        </li>
+                        <li class = "charted_info_chart_entry">
+                            <p id = 'precipitation_chart_time6' class = "charted_info_chart_data">00.0</p>
+                            <div id = 'precipitation_chart_box6' class = "charted_info_chart_grid"></div>
+                        </li>
+                        <li class = "charted_info_chart_entry_type2">
+                            <p id = 'precipitation_chart_time8' class = "charted_info_chart_data">00.0</p>
+                            <div id = 'precipitation_chart_box8' class = "charted_info_chart_grid_type2"></div>
+                        </li>
+                        <li class = "charted_info_chart_entry_type2">
+                            <p id = 'precipitation_chart_time10' class = "charted_info_chart_data">00.0</p>
+                            <div id = 'precipitation_chart_box10' class = "charted_info_chart_grid_type2"></div>
+                        </li>
+                        <li class = "charted_info_chart_entry">
+                            <p id = 'precipitation_chart_time12' class = "charted_info_chart_data">00.0</p>
+                            <div id = 'precipitation_chart_box12' class = "charted_info_chart_grid"></div>
+                        </li>
+                        <li class = "charted_info_chart_entry_type2">
+                            <p id = 'precipitation_chart_time14' class = "charted_info_chart_data">00.0</p>
+                            <div id = 'precipitation_chart_box14' class = "charted_info_chart_grid_type2"></div>
+                        </li>
+                        <li class = "charted_info_chart_entry_type2">
+                            <p id = 'precipitation_chart_time16' class = "charted_info_chart_data">00.0</p>
+                            <div id = 'precipitation_chart_box16' class = "charted_info_chart_grid_type2"></div>
+                        </li>
+                        <li class = "charted_info_chart_entry">
+                            <p id = 'precipitation_chart_time18' class = "charted_info_chart_data">00.0</p>
+                            <div id = 'precipitation_chart_box18' class = "charted_info_chart_grid"></div>
+                        </li>
+                        <li class = "charted_info_chart_entry_type2">
+                            <p id = 'precipitation_chart_time20' class = "charted_info_chart_data">00.0</p>
+                            <div id = 'precipitation_chart_box20' class = "charted_info_chart_grid_type2"></div>
+                        </li>
+                        <li class = "charted_info_chart_entry_type2">
+                            <p id = 'precipitation_chart_time22' class = "charted_info_chart_data">00.0</p>
+                            <div id = 'precipitation_chart_box22' class = "charted_info_chart_grid_type2"></div>
+                        </li>
+                        <li class = "charted_info_chart_entry">
+                            <p id = 'precipitation_chart_time24' class = "charted_info_chart_data">00.0</p>
+                            <div id = 'precipitation_chart_box24' class = "charted_info_chart_grid"></div>
+                        </li>
+                    </ul>
+                </div>
+                <div id = "chart_wind" class = "charted_info_chart">
+                    <ul class = "charted_info_chart_list">
+                        <li class = "charted_info_chart_entry">
+                            <p id = 'wind_dir_chart_time0' class = "charted_info_chart_data">00.0</p>
+                            <p id = 'wind_speed_chart_time0' class = "charted_info_chart_data">00.0</p>
+                            <div id = 'wind_chart_box0' class = "charted_info_chart_grid"></div>
+                        </li>
+                        <li class = "charted_info_chart_entry_type2">
+                            <p id = 'wind_dir_chart_time2' class = "charted_info_chart_data">00.0</p>
+                            <p id = 'wind_speed_chart_time2' class = "charted_info_chart_data">00.0</p>
+                            <div id = 'wind_chart_box2' class = "charted_info_chart_grid_type2"></div>
+                        </li>
+                        <li class = "charted_info_chart_entry_type2">
+                            <p id = 'wind_dir_chart_time4' class = "charted_info_chart_data">00.0</p>
+                            <p id = 'wind_speed_chart_time4' class = "charted_info_chart_data">00.0</p>
+                            <div id = 'wind_chart_box4' class = "charted_info_chart_grid_type2"></div>
+                        </li>
+                        <li class = "charted_info_chart_entry">
+                            <p id = 'wind_dir_chart_time6' class = "charted_info_chart_data">00.0</p>
+                            <p id = 'wind_speed_chart_time6' class = "charted_info_chart_data">00.0</p>
+                            <div id = 'wind_chart_box6' class = "charted_info_chart_grid"></div>
+                        </li>
+                        <li class = "charted_info_chart_entry_type2">
+                            <p id = 'wind_dir_chart_time8' class = "charted_info_chart_data">00.0</p>
+                            <p id = 'wind_speed_chart_time8' class = "charted_info_chart_data">00.0</p>
+                            <div id = 'wind_chart_box8' class = "charted_info_chart_grid_type2"></div>
+                        </li>
+                        <li class = "charted_info_chart_entry_type2">
+                            <p id = 'wind_dir_chart_time10' class = "charted_info_chart_data">00.0</p>
+                            <p id = 'wind_speed_chart_time10' class = "charted_info_chart_data">00.0</p>
+                            <div id = 'wind_chart_box10' class = "charted_info_chart_grid_type2"></div>
+                        </li>
+                        <li class = "charted_info_chart_entry">
+                            <p id = 'wind_dir_chart_time12' class = "charted_info_chart_data">00.0</p>
+                            <p id = 'wind_speed_chart_time12' class = "charted_info_chart_data">00.0</p>
+                            <div id = 'wind_chart_box12' class = "charted_info_chart_grid"></div>
+                        </li>
+                        <li class = "charted_info_chart_entry_type2">
+                            <p id = 'wind_dir_chart_time14' class = "charted_info_chart_data">00.0</p>
+                            <p id = 'wind_speed_chart_time14' class = "charted_info_chart_data">00.0</p>
+                            <div id = 'wind_chart_box14' class = "charted_info_chart_grid_type2"></div>
+                        </li>
+                        <li class = "charted_info_chart_entry_type2">
+                            <p id = 'wind_dir_chart_time16' class = "charted_info_chart_data">00.0</p>
+                            <p id = 'wind_speed_chart_time16' class = "charted_info_chart_data">00.0</p>
+                            <div id = 'wind_chart_box16' class = "charted_info_chart_grid_type2"></div>
+                        </li>
+                        <li class = "charted_info_chart_entry">
+                            <p id = 'wind_dir_chart_time18' class = "charted_info_chart_data">00.0</p>
+                            <p id = 'wind_speed_chart_time18' class = "charted_info_chart_data">00.0</p>
+                            <div id = 'wind_chart_box18' class = "charted_info_chart_grid"></div>
+                        </li>
+                        <li class = "charted_info_chart_entry_type2">
+                            <p id = 'wind_dir_chart_time20' class = "charted_info_chart_data">00.0</p>
+                            <p id = 'wind_speed_chart_time20' class = "charted_info_chart_data">00.0</p>
+                            <div id = 'wind_chart_box20' class = "charted_info_chart_grid_type2"></div>
+                        </li>
+                        <li class = "charted_info_chart_entry_type2">
+                            <p id = 'wind_dir_chart_time22' class = "charted_info_chart_data">00.0</p>
+                            <p id = 'wind_speed_chart_time22' class = "charted_info_chart_data">00.0</p>
+                            <div id = 'wind_chart_box22' class = "charted_info_chart_grid_type2"></div>
+                        </li>
+                        <li class = "charted_info_chart_entry">
+                            <p id = 'wind_dir_chart_time24' class = "charted_info_chart_data">00.0</p>
+                            <p id = 'wind_speed_chart_time24' class = "charted_info_chart_data">00.0</p>
+                            <div id = 'wind_chart_box24' class = "charted_info_chart_grid"></div>
+                        </li>
+                    </ul>
+                </div>  
+                <div class = "charted_info_chart_label">
+                    <ul class = "charted_info_chart_label_time_list chart_temp" >
+                        <li class = "charted_info_chart_label_time_entry">00:00</li>
+                        <li class = "charted_info_chart_label_time_entry_invi">03:00</li>
+                        <li class = "charted_info_chart_label_time_entry">06:00</li>
+                        <li class = "charted_info_chart_label_time_entry_invi">09:00</li>
+                        <li class = "charted_info_chart_label_time_entry">12:00</li>
+                        <li class = "charted_info_chart_label_time_entry_invi">15:00</li>
+                        <li class = "charted_info_chart_label_time_entry">18:00</li>
+                        <li class = "charted_info_chart_label_time_entry_invi">21:00</li>
+                        <li class = "charted_info_chart_label_time_entry">24:00</li>
+                   </ul>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <div></div>
+    <script type = 'text/javascript' src = 'chart_funcs.js'></script>
+    <script type = 'text/javascript' src = 'index_src.js'></script>
+    <script type = 'text/javascript' src = 'fetchCurrentData_src.js'></script>
+</body>
+</html>
